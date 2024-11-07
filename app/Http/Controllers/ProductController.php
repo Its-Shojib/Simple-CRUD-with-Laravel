@@ -61,17 +61,11 @@ class ProductController extends Controller
 
         return redirect()->route('products.index')->with('success','Product added successfully.');
     }
-    public function show($id){
-
-    }
     public function edit($id) {
         $product = Product::findOrFail($id);
         return view('products.edit',[
             'product' => $product
         ]);
-    }
-    public function update(Request $request, $id){
-
     }
     public function destroy($id){
 
