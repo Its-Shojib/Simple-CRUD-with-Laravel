@@ -9,31 +9,59 @@
 
 <body>
     <div class='min-h-screen max-w-screen-2xl'>
-        <h1 class='bg-black text-white text-center text-3xl font-semibold py-3'>This is simple create product page</h1>
+        <h1 class='bg-black text-white text-center text-3xl font-semibold py-3'>Simple Laravel CRUD</h1>
 
 
 
-        <div class='bg-gray-500 w-[500px] mx-auto my-5 rounded-md'>
-            <form action="" class="p-10 space-y-5">
-                <h1 class="text-center text-white text-3xl">Create Product</h1>
-                <div>
-                    <label class="text-2xl font-semibold" for="product_name">Product Name:</label>
-                    <br>
-                    <input class="p-1 outline-none rounded-2xl w-2/3" type="text" id="product_name" name="product_name"
-                        required>
-                </div>
-                <div>
-                    <label class="text-2xl font-semibold" for="product_price">Product Price:</label>
-                    <br>
-                    <input class="p-1 outline-none rounded-2xl w-2/3" type="number" id="product_price" name="product_price"
-                        required>
-                </div>
-                <div>
-                    <label class="text-2xl font-semibold" for="product_description">Product Description:</label>
-                    <br>
-                    <textarea class="p-1 outline-none rounded-2xl w-2/3" id="product_description" name="product_description" required></textarea>
+        <div class='bg-white shadow-2xl w-[500px] mx-auto my-5 rounded-md'>
+        <form action="{{ route('products.store') }}" method="post" enctype="multipart/form-data" class="p-10 space-y-5">
+    @csrf
+    <h1 class="text-center text-white text-2xl bg-black py-2 rounded-md">Create Product</h1>
+    
+    <div>
+        <label class="text-xl font-semibold" for="product_name">Product Name:</label>
+        <br>
+        <input class="p-2 border-2 rounded-md w-full" type="text" id="product_name" name="name" placeholder="Enter Product name" required>
+        @error('name')
+            <p>{{ $message }}</p>
+        @enderror
+    </div>
+    
+    <div>
+        <label class="text-xl font-semibold" for="SKU">SKU:</label>
+        <br>
+        <input class="p-2 border-2 rounded-md w-full" type="text" id="SKU" name="sku" placeholder="Enter SKU" required>
+        @error('sku')
+            <p>{{ $message }}</p>
+        @enderror
+    </div>
+    
+    <div>
+        <label class="text-xl font-semibold" for="product_price">Product Price:</label>
+        <br>
+        <input class="p-2 border-2 rounded-md w-full" type="number" id="product_price" name="price" placeholder="Enter The Price" required>
+        @error('price')
+            <p>{{ $message }}</p>
+        @enderror
+    </div>
+    
+    <div>
+        <label class="text-xl font-semibold" for="image">Image:</label>
+        <br>
+        <input class="p-2 border-2 rounded-md w-full" type="file" id="image" name="image">
+    </div>
+    
+    <div>
+        <label class="text-xl font-semibold" for="product_description">Product Description:</label>
+        <br>
+        <textarea class="p-2 border-2 rounded-md w-full" id="product_description" name="description" placeholder="Product descriptions"></textarea>
+    </div>
+    
+    <div>
+        <button type="submit" class="p-2 bg-blue-500 text-white rounded-md w-full">Create Product</button>
+    </div>
+</form>
 
-            </form>
         </div>
     </div>
 
