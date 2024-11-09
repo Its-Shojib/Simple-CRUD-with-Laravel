@@ -69,8 +69,8 @@
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ $product->sku }}</td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ $product->created_at->format('d/m/Y') }}</td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500  flex gap-2 items-center">
-                                <a href="{{ route('product.edit', $product->id) }}" class="bg-blue-800 text-white px-2 rounded-lg">Edit</a> |
-                                <form action="{{ route('product.destroy', $product->id) }}" method="POST">
+                                <a href="{{ route('products.edit', $product->id) }}" class="bg-blue-800 text-white px-2 rounded-lg">Edit</a> |
+                                <form action="{{ route('products.destroy', $product->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button class="bg-red-800 text-white px-2 rounded-lg">Delete</button>

@@ -12,8 +12,7 @@ Route::get('/create', [ProductController::class, 'create'])->name('products.crea
 Route::post('/products', [ProductController::class, 'store'])->name('products.store'); // Store product data
 
 // Add these routes for edit, update, and delete
-Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->name('product.edit');
-Route::put('/product/{id}', [ProductController::class, 'update'])->name('product.update');
-Route::delete('/product/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
-Route::put('/product/{product}','update')->name('product.update');
-Route::delete('/product/{product}','destroy')->name('product.destroy');   
+Route::get('/products/{id}/edit', [ProductController::class, 'edit'])->name('products.edit');
+Route::put('/products/{product}', [ProductController::class, 'update'])->name('products.update');
+Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
+  
