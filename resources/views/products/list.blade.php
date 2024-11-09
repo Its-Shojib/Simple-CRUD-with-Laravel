@@ -61,7 +61,7 @@
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ $product->id }}</td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                 @if ($product->image != "")
-                                <img class="rounded-full" width="50" src="{{ asset('uploads/products/'.$product->image) }}" alt="">
+                                <img class="rounded-full w-16 h-16" src="{{ asset('uploads/products/'.$product->image) }}" alt="">
                                 @endif
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ $product->name }}</td>
