@@ -17,7 +17,6 @@
         </div>
 
 
-
         <div class='bg-white shadow-2xl w-[500px] mx-auto my-5 rounded-md'>
 
             <form action="{{ route('products.store') }}" method="post" enctype="multipart/form-data" class="p-10 space-y-5">
